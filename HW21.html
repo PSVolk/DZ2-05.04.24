@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+class Marker {
+  constructor(color) 
+  {
+    this.color = color;
+    this.count = 100;
+  }
+	print(string)
+	{
+
+        Array.from(string).forEach((ch) =>
+    {
+      if ((this.count - 0.5) >= 0) 
+	  {
+       alert(ch);
+       if (ch !== ' ')
+	   {
+			this.count-=0.5;
+			}
+			}
+			}
+			)
+		}	
+}
+let m = new Marker('red');
+m.print('hello');
+</script>
+</body>
+</html>
