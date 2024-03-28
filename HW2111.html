@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+class Marker {
+  constructor(color) 
+  {
+    this.color = color;
+    this.count = 100;
+  }
+	print(string)
+	{
+
+        Array.from(string).forEach((ch) =>
+    {
+      if ((this.count - 0.5) >= 0) 
+	  {
+       alert(ch);
+       if (ch !== ' ')
+	   {
+			this.count-=0.5;
+			}
+			}
+			}
+			)
+		}	
+}
+
+class Rechargible_marker extends Marker
+{
+		recharge(proc=100)
+				{
+					if ((this.count + proc) > 100)
+					{
+					this.count = 100;
+				}
+				else
+				{
+					this.count+=proc;
+				}	
+			}	
+}
+
+
+
+let test_str = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+let m = new Marker('red');
+m.print(test_str);
+
+let r_m = new Rechargible_marker;
+Array.from(test_str).forEach((ch) =>
+{
+	r_m.print(ch);
+		if(r_m.count ==0)
+		{
+			r_m.recharge();
+		}
+})
+
+
+</script>
+</body>
+</html>
