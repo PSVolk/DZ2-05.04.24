@@ -12,7 +12,7 @@
    <label for="pwd">Password:</label><br>
   <input type="password" id="pwd" name="pwd" required="true" minlength="6" maxlength="30"><br>
    <label for="pwd">Repeat:</label><br>
-  <input type="password" id="pwd_r" name="pwd_r" data-parsley-repeated="true"><br>
+  <input type="password" id="pwd_r" name="pwd_r" data-parsley-repeated="true" data-parsley-equalto="#pwd"><br>
    <input type="submit" value="Submit"><br>
 </form>
     <script src="jquery.js"></script>
@@ -26,9 +26,9 @@
    var pwd = $('#pwd').parsley();
    console.log(pwd.isValid());
    var pwd_r = $('#pwd_r').parsley();
-   console.log(form.element.pwd.value);
-   $('#pwd_r').attr('pattern', form.element.pwd.value);
    console.log(pwd_r.isValid());
+   /*$('#pwd_r').attr('pattern', form.elements.pwd.value);
+   console.log(pwd_r.isValid());*/
   
 </script>
    </body>
